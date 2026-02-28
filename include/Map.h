@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-
+#include <map>
 class Map {
     std::vector<std::string> map;
 public:
@@ -10,3 +10,4 @@ public:
     Map();
     void draw() const;
 };
+
