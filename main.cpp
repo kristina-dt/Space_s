@@ -1,4 +1,4 @@
-#include "include/Map.h"
+#include "Map.h"
 
 int main() {
     Map m;

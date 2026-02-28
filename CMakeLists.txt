@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 23)
 add_subdirectory(src)
 include_directories(include)
 
-add_executable(SpaceGame main.cpp src/Map.cpp src/Player.cpp)
+add_executable(SpaceGame main.cpp)
+target_link_libraries(SpaceGame PRIVATE GameLogic)
