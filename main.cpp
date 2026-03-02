@@ -1,7 +1,7 @@
-#include "Map.h"
+#include "include/GameEngine.h"
 
 int main() {
-    Map m;
-    m.draw();
+    GameEngine m;
+    m.drawOnce();
     return 0;
 }

@@ -27,7 +27,6 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcaa4c38-5697-4376-ad3a-33ad9febf3bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,11 +44,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="Visualization" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -62,16 +56,6 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/kristina-dt/Space_s.git&quot;,
     &quot;accountId&quot;: &quot;e30d4d27-bc56-4e3a-8fd4-340cc2819f61&quot;
-  },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
-    },
-    &quot;owner&quot;: &quot;kristina-dt&quot;,
-    &quot;repository&quot;: &quot;Space_s&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -91,9 +75,6 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectStatusUIService">{
-  &quot;uiKindId&quot;: &quot;Widget&quot;
-}</component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -151,15 +132,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="C/C++ File.main.cpp" />
-      <item itemvalue="CMake Application.SpaceGame" />
       <item itemvalue="CMake Application.GameLogic" />
-      <item itemvalue="CMake Debug.Project" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="CMake Debug.Project" />
-        <item itemvalue="C/C++ File.main.cpp" />
         <item itemvalue="C/C++ File.main.cpp" />
         <item itemvalue="CMake Debug.Project" />
       </list>
@@ -179,7 +155,6 @@
       <workItem from="1772122539370" duration="6074000" />
       <workItem from="1772272620304" duration="1434000" />
       <workItem from="1772274319854" duration="6026000" />
-      <workItem from="1772391532367" duration="7676000" />
     </task>
     <servers />
   </component>
@@ -192,40 +167,11 @@
     <isAutomaticReloadCMake value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a19a5439-35e2-418a-8d0f-2343d3391c7d" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State />
-          </value>
-        </entry>
-        <entry key="a19a5439-35e2-418a-8d0f-2343d3391c7d">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="range">
-                    <value>
-                      <list>
-                        <option value="origin/main..origin/Visualization" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="roots">
-                    <value>
-                      <list>
-                        <option value="$PROJECT_DIR$" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
           </value>
         </entry>
       </map>
