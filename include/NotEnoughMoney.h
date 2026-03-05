@@ -1,13 +1,14 @@
 //
 // Created by Arina on 06.03.2026.
 //
+#pragma once
 
-#ifndef MYPROJECT_NOTENOUGHMONEY_H
-#define MYPROJECT_NOTENOUGHMONEY_H
+#include <string>
+#include <stdexcept>
 
-
-class NotEnoughMoney {
+class NotEnoughMoney : public std::runtime_error {
+public:
+    explicit NotEnoughMoney(const std::string& message) : std:: runtime_error(message) {}
 };
 
 
-#endif //MYPROJECT_NOTENOUGHMONEY_H
