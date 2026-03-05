@@ -27,10 +27,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/include/Appliance.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Appliance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="Add class Appliance">
+      <change beforePath="$PROJECT_DIR$/include/Appliance.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Appliance.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +172,15 @@
       <workItem from="1772477020182" duration="652000" />
       <workItem from="1772525119486" duration="676000" />
     </task>
+    <task id="LOCAL-00001" summary="Add class Appliance">
+      <option name="closed" value="true" />
+      <created>1772744257167</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772744257167</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,5 +201,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add class Appliance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add class Appliance" />
   </component>
 </project>
