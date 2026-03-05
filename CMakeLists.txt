@@ -3,8 +3,26 @@ project(MyProject)
 
 set(CMAKE_CXX_STANDARD 23)
 
+include(cmake/config.cmake)
+
 add_subdirectory(src)
 include_directories(include)
 
 add_executable(SpaceGame main.cpp)
 target_link_libraries(SpaceGame PRIVATE GameLogic)
+
+
+enable_testing()
+
+add_executable(
+        test_ex
+        test/test_ex.cpp
+)
+target_link_libraries(
+        test_ex
+        GTest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(test_ex)
+
