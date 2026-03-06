@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <iostream>
 struct Resource {
     enum Type{ Fuel, Food, Drinks, Details, Decorations};
     Type type;
@@ -40,14 +39,6 @@ public:
     int getSellPrice(Resource::Type type) const;
     int getAmountResource(Resource::Type type) const;
     void print() const;
-
-
-
-
-
-
-
-
 
 };
 
