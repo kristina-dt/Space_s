@@ -55,3 +55,13 @@ void InformationPlayer::upgradeWorkShop(int cost) {
         throw;
     }
 }
+
+bool InformationPlayer::addResource(Resource::Type type, int amount) {
+    for (auto& res : inventory) {
+        if (res.type == type) {
+            res.amount += amount;
+            return true;
+        }
+    }
+    return false;
+}
