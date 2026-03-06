@@ -37,6 +37,8 @@ public:
     bool sell(Resource::Type type, int amount);
     bool sellTakeMoney(Resource::Type type, int amount);
     int getBuyPrice(Resource::Type type) const;
+    int getSellPrice(Resource::Type type) const;
+
 
 
 
