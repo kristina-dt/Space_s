@@ -30,9 +30,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="add declaration in InformationPlayer.cpp">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/InformationPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/InformationPlayer.h" afterDir="false" />
+    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="add func buyResource in InformationPlayer.cpp">
       <change beforePath="$PROJECT_DIR$/src/InformationPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InformationPlayer.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +253,39 @@
       <option name="project" value="LOCAL" />
       <updated>1772835606984</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add func getName, detSex, getLevel,getWal,SetPosition in InformationPlayer.cpp">
+      <option name="closed" value="true" />
+      <created>1772835927101</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835927101</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add func upgradeWorkShop in InformationPlayer.cpp">
+      <option name="closed" value="true" />
+      <created>1772836036662</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772836036662</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add func addResource in InformationPlayer.cpp">
+      <option name="closed" value="true" />
+      <created>1772836115968</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1772836115968</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add func buyResource in InformationPlayer.cpp">
+      <option name="closed" value="true" />
+      <created>1772836169350</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1772836169350</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +317,10 @@
     <MESSAGE value="add func getAmountResource in InformationPlayer.h" />
     <MESSAGE value="add func print in InformationPlayer.h" />
     <MESSAGE value="add declaration in InformationPlayer.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="add declaration in InformationPlayer.cpp" />
+    <MESSAGE value="add func getName, detSex, getLevel,getWal,SetPosition in InformationPlayer.cpp" />
+    <MESSAGE value="add func upgradeWorkShop in InformationPlayer.cpp" />
+    <MESSAGE value="add func addResource in InformationPlayer.cpp" />
+    <MESSAGE value="add func buyResource in InformationPlayer.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="add func buyResource in InformationPlayer.cpp" />
   </component>
 </project>

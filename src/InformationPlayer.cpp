@@ -92,3 +92,15 @@ bool InformationPlayer::sell(Resource::Type type, int amount) {
     }
     return false;
 }
+bool InformationPlayer::sellTakeMoney(Resource::Type type, int amount) {
+    if (sell(type,amount)) {
+        int totalCost = amount * sellPrice[type];
+        wallet.deposit(totalCost);
+        std::cout<<"Awesome!!!Sold " << amount<<" units of resource, you earn: " << totalCost << '\n';
+        return true;
+    }
+    else {
+        std::cout<<"Error!!! You can't sell this type of resource!" << '\n';
+        return false;
+    }
+}
