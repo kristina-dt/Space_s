@@ -65,3 +65,18 @@ bool InformationPlayer::addResource(Resource::Type type, int amount) {
     }
     return false;
 }
+bool InformationPlayer::buyResource(Resource::Type type, int amount) {
+    int totalPrice = amount * buyPrice[type];
+    try {
+        wallet.withdraw(totalPrice);
+        addResource(type, amount);
+        std::cout<<"Purchased " << amount << " units of resource, you spent: " << totalPrice << '\n';
+        return true;
+    }
+    catch (const NotEnoughMoney& error) {
+        std::cout<<"Error! " << error.what() << '\n';
+        return false;
+
+    }
+
+}
