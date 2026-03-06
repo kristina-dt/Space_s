@@ -21,3 +21,17 @@ InformationPlayer::InformationPlayer(const std::string namePlayer, const std::st
     sellPrice[Resource::Type::Fuel] = 18;
 
 }
+
+std::string InformationPlayer::getName()const {
+    return name;
+}
+std::string InformationPlayer::getSex()const {
+    return sex;
+}
+
+int InformationPlayer::getLevel()const{return WorkshopLevel;}
+Wallet& InformationPlayer::getWal() {return wallet;}
+void InformationPlayer::SetPosition(float x, float y) {
+    posX = x;
+    posY = y;
+}

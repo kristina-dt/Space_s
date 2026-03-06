@@ -30,8 +30,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="add private info in InformationPlayer">
+    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="add declaration in InformationPlayer.cpp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/InformationPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/InformationPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InformationPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InformationPlayer.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +207,55 @@
       <option name="project" value="LOCAL" />
       <updated>1772834627842</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add func: getX, getY, getLevel, getWal, Setposition, upgradeWorkshop, buyResourse, addResourse, getName, getSex, sellTakeMoney in InformationPlayer.h">
+      <option name="closed" value="true" />
+      <created>1772835155197</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835155197</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add func getBuyPrice in InformationPlayer.h">
+      <option name="closed" value="true" />
+      <created>1772835209679</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835209679</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add func getSellPrice in InformationPlayer.h">
+      <option name="closed" value="true" />
+      <created>1772835251566</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835251566</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add func getAmountResource in InformationPlayer.h">
+      <option name="closed" value="true" />
+      <created>1772835292932</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835292932</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add func print in InformationPlayer.h">
+      <option name="closed" value="true" />
+      <created>1772835328493</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835328493</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add declaration in InformationPlayer.cpp">
+      <option name="closed" value="true" />
+      <created>1772835606984</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1772835606984</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +281,12 @@
     <MESSAGE value="add changes of library in Wallet.cpp" />
     <MESSAGE value="add classes InformationPlayer" />
     <MESSAGE value="add private info in InformationPlayer" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private info in InformationPlayer" />
+    <MESSAGE value="add func: getX, getY, getLevel, getWal, Setposition, upgradeWorkshop, buyResourse, addResourse, getName, getSex, sellTakeMoney in InformationPlayer.h" />
+    <MESSAGE value="add func getBuyPrice in InformationPlayer.h" />
+    <MESSAGE value="add func getSellPrice in InformationPlayer.h" />
+    <MESSAGE value="add func getAmountResource in InformationPlayer.h" />
+    <MESSAGE value="add func print in InformationPlayer.h" />
+    <MESSAGE value="add declaration in InformationPlayer.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="add declaration in InformationPlayer.cpp" />
   </component>
 </project>

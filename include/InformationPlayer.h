@@ -25,8 +25,8 @@ public:
     InformationPlayer (const std::string namePlayer, const std::string s, int a, float py, float px, int startMoney);
     std::string getName()const;
     std::string getSex()const;
-    constexpr float getX()const;
-    constexpr float getY()const;
+    constexpr float getX()const{return posX;};
+    constexpr float getY()const{return posY;};
     int getLevel()const;
     Wallet& getWal();
     void SetPosition(float x, float y);
