@@ -16,6 +16,13 @@ void Wallet::withdraw(int amount) {
     }
     balance -= amount;
 }
+void Wallet::deposit(int amount) {
+    balance+=amount;
+}
+int Wallet::getBal() const {
+    return balance;
+}
+
 
 
 
