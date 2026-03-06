@@ -1,5 +1,6 @@
-#include "Wallet.h"
+#include "../include/Wallet.h"
 #include <string>
+#include "../include/NotEnoughMoney.h"
 
 Wallet::Wallet(int initialAmount) noexcept : balance(initialAmount) {
     if (initialAmount<0) {
