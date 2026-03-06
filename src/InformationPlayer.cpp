@@ -1,6 +1,7 @@
 
 
 #include "../include/InformationPlayer.h"
+#include <iostream>
 
 InformationPlayer::InformationPlayer(const std::string namePlayer, const std::string s, int a, float py, float px, int startMoney) : name(namePlayer),sex(s),age(a), WorkshopLevel(1), posX(px), posY(py), wallet(startMoney) {
     inventory.push_back({Resource::Type::Fuel, 5});
@@ -34,4 +35,23 @@ Wallet& InformationPlayer::getWal() {return wallet;}
 void InformationPlayer::SetPosition(float x, float y) {
     posX = x;
     posY = y;
+}
+
+void InformationPlayer::upgradeWorkShop(int cost) {
+    try {
+        wallet.withdraw(cost);
+        WorkshopLevel++;
+        for (auto& price : sellPrice) {
+            price.second = static_cast<int>(price.second * (1.0 - WorkshopLevel * 0.03));
+        }
+        for (auto& price : buyPrice) {
+            price.second = static_cast<int>(price.second * (1.0 - WorkshopLevel * 0.05));
+        }
+        std::cout<<"Congratulations! Now you have " << WorkshopLevel << " level!\n";
+        std::cout<<"Now you have new prices!\n";
+    }
+    catch (const NotEnoughMoney& error) {
+        std::cout<<"O, no. Error!!! " << error.what() << '\n';
+        throw;
+    }
 }
