@@ -118,3 +118,28 @@ int InformationPlayer::getAmountResource(Resource::Type type) const {
     }
     return 0;
 }
+void InformationPlayer::print() const {
+    std::cout <<"Player's name: " << name << '\n';
+    std::cout <<"Player's sex: " << sex << '\n';
+    std::cout <<"Player's coordinates: " << posX << " , " << posY << '\n';
+    std::cout <<"WorkShop's level: " << WorkshopLevel << '\n';
+    std::cout <<"Wallet balance: " << wallet << '\n';
+    std::cout<<"Inventory:\n";
+    for (const auto& res : inventory) {
+        std::string typeName;
+        switch (res.type) {
+            case Resource::Type::Fuel: typeName = "Fuel"; break;
+            case Resource::Type::Food: typeName = "Food"; break;
+            case Resource::Type::Drinks: typeName = "Drinks"; break;
+            case Resource::Type::Details: typeName = "Details"; break;
+            case Resource::Type::Decorations: typeName = "Decorations"; break;
+        }
+        std::cout << "  - " << typeName << ": " << res.amount << " units\n";
+    }
+    std::cout<<"Prices for " << WorkshopLevel << " level:\n";
+    std::cout<<"Fuel purchase: " << buyPrice.at(Resource::Type::Fuel) << " | sale: " << sellPrice.at(Resource::Type::Fuel) << '\n';
+    std::cout<<"Food purchase: " << buyPrice.at(Resource::Type::Food) << " | sale: " << sellPrice.at(Resource::Type::Food)<<'\n';
+    std::cout<<"Drinks purchase: " << buyPrice.at(Resource::Type::Drinks) << " | sale: " << sellPrice.at(Resource::Type::Drinks)<<'\n';
+    std::cout<<"Details purchase: " << buyPrice.at(Resource::Type::Details) << " | sale: " << sellPrice.at(Resource::Type::Details)<<'\n';
+    std::cout<<"Decorations purchase: " << buyPrice.at(Resource::Type::Decorations) << " | sale: " << sellPrice.at(Resource::Type::Decorations)<<'\n';
+}
