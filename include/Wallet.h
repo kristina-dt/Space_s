@@ -12,6 +12,8 @@ public:
     Wallet (const Wallet&) = default;
     Wallet& operator=(const Wallet) = delete;
     Wallet(Wallet&& other) noexcept;
+    void withdraw(int amount);
+    void deposit(int amount);
 
 
 };
