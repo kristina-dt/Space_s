@@ -22,6 +22,10 @@ void Wallet::deposit(int amount) {
 int Wallet::getBal() const {
     return balance;
 }
+std::ostream& operator<<(std::ostream& os, const Wallet& wal) {
+    os << "Wallet Balance: " << wal.getBal() << " credits";
+    return os;
+}
 
 
 
