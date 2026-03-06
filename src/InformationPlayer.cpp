@@ -80,3 +80,15 @@ bool InformationPlayer::buyResource(Resource::Type type, int amount) {
     }
 
 }
+bool InformationPlayer::sell(Resource::Type type, int amount) {
+    for (auto& res : inventory) {
+        if (res.type == type) {
+            if (res.amount > amount) {
+                res.amount -= amount;
+                return true;
+            }
+            return false;
+        }
+    }
+    return false;
+}
