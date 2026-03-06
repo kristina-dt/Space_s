@@ -104,3 +104,17 @@ bool InformationPlayer::sellTakeMoney(Resource::Type type, int amount) {
         return false;
     }
 }
+int InformationPlayer::getBuyPrice(Resource::Type type) const {
+    return buyPrice.at(type);
+}
+int InformationPlayer::getSellPrice(Resource::Type type) const {
+    return sellPrice.at(type);
+}
+int InformationPlayer::getAmountResource(Resource::Type type) const {
+    for (const auto& res : inventory) {
+        if (res.type == type) {
+            return res.amount;
+        }
+    }
+    return 0;
+}
