@@ -14,8 +14,7 @@ public:
     Wallet(Wallet&& other) noexcept;
     void withdraw(int amount);
     void deposit(int amount);
-
-
+    int getBal() const;
 };
-
+std::ostream& operator<<(std::ostream& os, const Wallet& wal);
 
