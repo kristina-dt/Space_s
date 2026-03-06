@@ -1,13 +1,31 @@
-//
-// Created by Arina on 06.03.2026.
-//
 
-#ifndef SPACE_S_INFORMATIONPLAYER_H
-#define SPACE_S_INFORMATIONPLAYER_H
-
+#pragma once
+#include "Wallet.h"
+#include <string>
+#include <vector>
+#include <map>
+#include <iostream>
+struct Resource {
+    enum Type{ Fuel, Food, Drinks, Details, Decorations};
+    Type type;
+    int amount;
+};
 
 class InformationPlayer {
+private:
+    std::string name;
+    std::string sex;
+    int age;
+    int WorkshopLevel;
+    std::vector<Resource> inventory;
+    float posX, posY;
+    Wallet wallet;
+    std::map<Resource::Type, int> buyPrice;
+    std::map<Resource::Type, int> sellPrice;
+public:
+
+
+
 };
 
 
-#endif //SPACE_S_INFORMATIONPLAYER_H
