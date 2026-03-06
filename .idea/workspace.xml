@@ -27,8 +27,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="Add class definition to class Appliance">
-      <change afterPath="$PROJECT_DIR$/include/FuelMaker.h" afterDir="false" />
+    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="Add class FuelMaker with base definition">
+      <change afterPath="$PROJECT_DIR$/include/PartAssembler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772744847312</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add class FuelMaker with base definition">
+      <option name="closed" value="true" />
+      <created>1772768014194</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772768014194</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +222,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add class Appliance" />
     <MESSAGE value="Add class definition to class Appliance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add class definition to class Appliance" />
+    <MESSAGE value="Add class FuelMaker with base definition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add class FuelMaker with base definition" />
   </component>
 </project>
