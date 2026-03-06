@@ -39,6 +39,7 @@ public:
     int getBuyPrice(Resource::Type type) const;
     int getSellPrice(Resource::Type type) const;
     int getAmountResource(Resource::Type type) const;
+    void print() const;
 
 
 
