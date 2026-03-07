@@ -9,11 +9,6 @@ InformationPlayer::InformationPlayer(const std::string namePlayer, const std::st
     inventory.push_back({Resource::Type::Drinks, 7});
     inventory.push_back({Resource::Type::Details, 5});
     inventory.push_back({Resource::Type::Decorations, 0});
-    buyPrice[Resource::Type::Details] = 16;
-    buyPrice[Resource::Type::Food] = 5;
-    buyPrice[Resource::Type::Drinks] = 5;
-    buyPrice[Resource::Type::Fuel] = 15;
-    buyPrice[Resource::Type::Decorations] = 30;
 
     sellPrice[Resource::Type::Decorations] = 45;
     sellPrice[Resource::Type::Details] = 20;
@@ -65,21 +60,7 @@ bool InformationPlayer::addResource(Resource::Type type, int amount) {
     }
     return false;
 }
-bool InformationPlayer::buyResource(Resource::Type type, int amount) {
-    int totalPrice = amount * buyPrice[type];
-    try {
-        wallet.withdraw(totalPrice);
-        addResource(type, amount);
-        std::cout<<"Purchased " << amount << " units of resource, you spent: " << totalPrice << '\n';
-        return true;
-    }
-    catch (const NotEnoughMoney& error) {
-        std::cout<<"Error! " << error.what() << '\n';
-        return false;
 
-    }
-
-}
 bool InformationPlayer::sell(Resource::Type type, int amount) {
     for (auto& res : inventory) {
         if (res.type == type) {
@@ -104,9 +85,7 @@ bool InformationPlayer::sellTakeMoney(Resource::Type type, int amount) {
         return false;
     }
 }
-int InformationPlayer::getBuyPrice(Resource::Type type) const {
-    return buyPrice.at(type);
-}
+
 int InformationPlayer::getSellPrice(Resource::Type type) const {
     return sellPrice.at(type);
 }
@@ -137,9 +116,9 @@ void InformationPlayer::print() const {
         std::cout << "  - " << typeName << ": " << res.amount << " units\n";
     }
     std::cout<<"Prices for " << WorkshopLevel << " level:\n";
-    std::cout<<"Fuel purchase: " << buyPrice.at(Resource::Type::Fuel) << " | sale: " << sellPrice.at(Resource::Type::Fuel) << '\n';
-    std::cout<<"Food purchase: " << buyPrice.at(Resource::Type::Food) << " | sale: " << sellPrice.at(Resource::Type::Food)<<'\n';
-    std::cout<<"Drinks purchase: " << buyPrice.at(Resource::Type::Drinks) << " | sale: " << sellPrice.at(Resource::Type::Drinks)<<'\n';
-    std::cout<<"Details purchase: " << buyPrice.at(Resource::Type::Details) << " | sale: " << sellPrice.at(Resource::Type::Details)<<'\n';
-    std::cout<<"Decorations purchase: " << buyPrice.at(Resource::Type::Decorations) << " | sale: " << sellPrice.at(Resource::Type::Decorations)<<'\n';
+    std::cout<<"Fuel purchase: "  << sellPrice.at(Resource::Type::Fuel) << '\n';
+    std::cout<<"Food purchase: " << sellPrice.at(Resource::Type::Food)<<'\n';
+    std::cout<<"Drinks purchase: " << sellPrice.at(Resource::Type::Drinks)<<'\n';
+    std::cout<<"Details purchase: "  << sellPrice.at(Resource::Type::Details)<<'\n';
+    std::cout<<"Decorations purchase: " << sellPrice.at(Resource::Type::Decorations)<<'\n';
 }

@@ -17,7 +17,7 @@ private:
     int age;
     int WorkshopLevel;
     std::vector<Resource> inventory;
-    float posX, posY;
+    static constexpr float posX = 2.2, posY=2.2;
     Wallet wallet;
     std::map<Resource::Type, int> buyPrice;
     std::map<Resource::Type, int> sellPrice;
