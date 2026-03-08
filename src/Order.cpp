@@ -33,3 +33,32 @@ int ResourceOrder::amount() const noexcept {
 std::unique_ptr<Order> ResourceOrder::clone() const {
     return std::make_unique<ResourceOrder>(*this);
 }
+
+UrgentOrder::UrgentOrder(ResourceType resource, int amount, int baseReward, int urgencyBonus): resource_(resource),amount_(amount),baseReward_(baseReward),urgencyBonus_(urgencyBonus) {}
+std::string UrgentOrder::typeName() const {
+    return "Urgent";
+}
+std::string UrgentOrder::describe() const {
+    std::ostringstream out;
+    out << "[URGENT] Need "
+        << amount_ << " units of "
+        << toString(resource_)
+        << ". Reward: " << rewardMoney() << " credits.";
+    return out.str();
+}
+
+int UrgentOrder::priority() const noexcept {
+    return 2;
+}
+int UrgentOrder::rewardMoney() const noexcept {
+    return baseReward_ + urgencyBonus_;
+}
+ResourceType UrgentOrder::resourceType() const noexcept {
+    return resource_;
+}
+int UrgentOrder::amount() const noexcept {
+    return amount_;
+}
+std::unique_ptr<Order> UrgentOrder::clone() const {
+    return std::make_unique<UrgentOrder>(*this);
+}
