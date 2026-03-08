@@ -1,8 +1,9 @@
 #include "FoodAndDrinksStation.h"
 #include <iostream>
 
-FoodAndDrinksStation::FoodAndDrinksStation() {
+FoodAndDrinksStation::FoodAndDrinksStation(int x, int y) {
     name_ = "Food & Drinks Station";
+    position_ = Position(x, y);
 }
 
 std::string FoodAndDrinksStation::getType() const {

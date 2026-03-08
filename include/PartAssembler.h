@@ -13,7 +13,7 @@ private:
     PartAssemblerMode currentMode_ = PartAssemblerMode::Details;
 
 public:
-    PartAssembler();
+    PartAssembler(int x, int y);
 
     std::string getType() const override;
     bool produce(Player& player) override;

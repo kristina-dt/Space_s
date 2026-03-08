@@ -1,8 +1,9 @@
 #include "PartAssembler.h"
 #include <iostream>
 
-PartAssembler::PartAssembler() {
+PartAssembler::PartAssembler(int x, int y) {
     name_ = "PartAssembler";
+    position_ = Position(x, y);
 }
 
 std::string PartAssembler::getType() const {

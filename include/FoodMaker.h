@@ -13,7 +13,7 @@ private:
     FoodDrinksMode currentMode_ = FoodDrinksMode::Food;
 
 public:
-    FoodAndDrinksStation();
+    FoodAndDrinksStation(int x, int y);
 
     std::string getType() const override;
     bool produce(Player& player) override;

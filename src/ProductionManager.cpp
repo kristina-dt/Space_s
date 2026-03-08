@@ -2,15 +2,14 @@
 #include "ProductionManager.h"
 
 ProductionManager::ProductionManager() {
-    appliances_.push_back(std::make_unique<FuelMaker>());
-    appliances_.push_back(std::make_unique<PartAssembler>());
-    appliances_.push_back(std::make_unique<FoodAndDrinksStation>());
-
-    std::cout << "Production Manager initialized with "
+    appliances_.push_back(std::make_unique<FuelMaker>(5, 10));
+    appliances_.push_back(std::make_unique<PartAssembler>(8, 12));
+    appliances_.push_back(std::make_unique<FoodAndDrinksStation>(3, 7));
+    std::cout << "\nProduction Manager initialized with "
               << appliances_.size() << " appliances\n";
-    std::cout << "   Station 0: Fuel Synthesizer\n";
-    std::cout << "   Station 1: Universal Assembler (Details/Decorations)\n";
-    std::cout << "   Station 2: Food & Drinks Station\n";
+    std::cout << "   Station 0: Fuel Synthesizer at (5, 10)\n";
+    std::cout << "   Station 1: Universal Assembler at (8, 12)\n";
+    std::cout << "   Station 2: Food & Drinks Station at (3, 7)\n";
 }
 
 Appliance* ProductionManager::getAppliance(int index) {
@@ -25,7 +24,21 @@ size_t ProductionManager::getCount() const {
     return appliances_.size();
 }
 
+int ProductionManager::findNearbyAppliance(int playerX, int playerY) const {
+    for (size_t i = 0; i < appliances_.size(); ++i) {
+        if (appliances_[i]->canInteract(playerX, playerY)) {
+            return static_cast<int>(i);
+        }
+    }
+    return -1;
+}
 
+Position ProductionManager::getAppliancePosition(int index) const {
+    if (index >= 0 && index < static_cast<int>(appliances_.size())) {
+        return appliances_[index]->getPosition();
+    }
+    return Position(-1, -1);
+}
 
 void ProductionManager::produceAll(Player& player) {
     std::cout << "\n🔨🔨🔨 PRODUCTION CYCLE 🔨🔨🔨\n";
@@ -41,7 +54,7 @@ void ProductionManager::produceAll(Player& player) {
 void ProductionManager::produceAt(size_t index, Player& player) {
     if (index < appliances_.size()) {
         std::cout << "\n▶ Station #" << index << " (" << appliances_[index]->getType() << "):\n";
-        appliances_[index]->produce(player);  // ПОЛИМОРФНЫЙ ВЫЗОВ!
+        appliances_[index]->produce(player);
     } else {
         std::cout << "Invalid station index! Use 0-" << appliances_.size()-1 << "\n";
     }

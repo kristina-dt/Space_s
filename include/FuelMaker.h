@@ -6,7 +6,7 @@
 
 class FuelMaker : public Appliance {
 public:
-    FuelMaker();
+    FuelMaker(int x, int y);
 
     std::string getType() const override;
     bool produce(Player& player) override;

@@ -1,8 +1,9 @@
 #include "FuelMaker.h"
 #include <iostream>
 
-FuelMaker::FuelMaker() {
+FuelMaker::FuelMaker(int x, int y) {
     name_ = "Fuel Synthesizer";
+    position_ = Position(x, y);
 }
 
 std::string FuelMaker::getType() const {
