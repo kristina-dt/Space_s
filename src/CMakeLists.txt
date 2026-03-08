@@ -1,6 +1,7 @@
 add_library(GameLogic
-        Player.cpp
         Map.cpp
-        GameEngine.cpp
+        NotEnoughMoney.cpp
+        ../include/NotEnoughMoney.h
+        Order.cpp
 )
 target_include_directories(GameLogic  PUBLIC ../include)
