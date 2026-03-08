@@ -29,6 +29,8 @@ public:
     bool hasOrder() const noexcept;
     bool isActive() const noexcept;
 
+
+
     float getX() const noexcept;
     float getY() const noexcept;
     float getSpeed() const noexcept;
