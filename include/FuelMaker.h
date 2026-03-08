@@ -1,25 +1,16 @@
+#pragma once
+
 #include "Appliance.h"
-#include <iostream>
+#include "Player.h"
+#include <string>
 
 class FuelMaker : public Appliance {
 public:
-    FuelMaker() {name_ = "Fuel Synthesizer";}
+    FuelMaker();
 
-    std::string getType() const override {
-        return "FuelMaker";
-    }
+    std::string getType() const override;
+    bool produce(Player& player) override;
+    int getUpgradeCost() const override;
 
-    bool produce(Player& player) override {
-        std::cout << "Producing " << getProductionRate() << " units of Fuel." << std::endl;
-        return true;
-    }
-
-    void upgrade() override {
-        std::cout << "Upgrading Fuel Maker. Cost: " << getUpgradeCost() << std::endl;
-        level_++;
-    }
-
-    int getUpgradeCost() const override {
-        return 100 * level_;
-    }
+    int getFuelPrice() const;
 };
