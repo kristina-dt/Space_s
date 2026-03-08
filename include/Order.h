@@ -9,9 +9,6 @@
 #include <memory>
 #include <string>
 
-enum class ResourceType : std::uint8_t { Fuel, Food, Drinks, Details, Decorations };
-std::string to_string(ResourceType t);
-
 class Order {
 public:
     virtual ~Order() = default;
