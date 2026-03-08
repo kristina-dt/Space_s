@@ -30,7 +30,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="Add class PartAssembler" />
+    <list default="true" id="28d8e54e-bb4e-499b-abf3-3a2948df2edc" name="Changes" comment="Add class FoodMaker">
+      <change afterPath="$PROJECT_DIR$/include/ProductionManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +179,7 @@
       <workItem from="1772477020182" duration="652000" />
       <workItem from="1772525119486" duration="676000" />
       <workItem from="1772877894213" duration="203000" />
-      <workItem from="1772960338578" duration="617000" />
+      <workItem from="1772960338578" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="Add class Appliance">
       <option name="closed" value="true" />
@@ -226,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772960952627</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add class FoodMaker">
+      <option name="closed" value="true" />
+      <created>1772961055294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772961055294</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +266,7 @@
     <MESSAGE value="Correct class Appliance" />
     <MESSAGE value="Correct class FuelMaker" />
     <MESSAGE value="Add class PartAssembler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add class PartAssembler" />
+    <MESSAGE value="Add class FoodMaker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add class FoodMaker" />
   </component>
 </project>
