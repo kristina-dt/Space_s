@@ -61,7 +61,7 @@ bool InformationPlayer::addResource(Resource::Type type, int amount) {
 bool InformationPlayer::sell(Resource::Type type, int amount) {
     for (auto& res : inventory) {
         if (res.type == type) {
-            if (res.amount > amount) {
+            if (res.amount >= amount) {
                 res.amount -= amount;
                 return true;
             }

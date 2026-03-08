@@ -2,7 +2,6 @@
 
 #pragma once
 #include <ostream>
-#include "NotEnoughMoney.h"
 
 class Wallet {
 private:
