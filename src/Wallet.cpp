@@ -23,6 +23,7 @@ int Wallet::getBal() const {
 std::ostream& operator<<(std::ostream& os, const Wallet& wal) {
     os << "Wallet Balance: " << wal.getBal() << " credits";
     return os;
+
 }
 
 
