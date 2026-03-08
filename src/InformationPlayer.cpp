@@ -39,9 +39,6 @@ void InformationPlayer::upgradeWorkShop(int cost) {
         for (auto& price : sellPrice) {
             price.second = static_cast<int>(price.second * (1.0 - WorkshopLevel * 0.03));
         }
-        for (auto& price : buyPrice) {
-            price.second = static_cast<int>(price.second * (1.0 - WorkshopLevel * 0.05));
-        }
         std::cout<<"Congratulations! Now you have " << WorkshopLevel << " level!\n";
         std::cout<<"Now you have new prices!\n";
     }
