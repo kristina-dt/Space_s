@@ -8,6 +8,24 @@
 #include <cstdint>
 #include <memory>
 #include <string>
+enum class ResourceType {
+    Fuel,
+    Food,
+    Drinks,
+    Details,
+    Decorations
+};
+
+inline std::string toString(ResourceType type) {
+    switch (type) {
+        case ResourceType::Fuel:        return "Fuel";
+        case ResourceType::Food:        return "Food";
+        case ResourceType::Drinks:      return "Drinks";
+        case ResourceType::Details:     return "Details";
+        case ResourceType::Decorations: return "Decorations";
+    }
+    return "Unknown";
+}
 
 class Order {
 public:
