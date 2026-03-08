@@ -8,8 +8,6 @@ private:
     int balance;
 public:
     Wallet (int initialAmount) noexcept;
-    Wallet (const Wallet&) = delete;
-    Wallet& operator=(const Wallet) = delete;
     void withdraw(int amount);
     void deposit(int amount);
     int getBal() const;
