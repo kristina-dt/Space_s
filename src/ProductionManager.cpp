@@ -1,4 +1,4 @@
-
+#include <optional>
 #include "ProductionManager.h"
 
 ProductionManager::ProductionManager() {
@@ -24,13 +24,20 @@ size_t ProductionManager::getCount() const {
     return appliances_.size();
 }
 
-int ProductionManager::findNearbyAppliance(int playerX, int playerY) const {
+
+
+class ProductionManager {
+public:
+    std::optional<int> findNearbyAppliance(int playerX, int playerY) const;
+};
+
+std::optional<int> ProductionManager::findNearbyAppliance(int playerX, int playerY) const {
     for (size_t i = 0; i < appliances_.size(); ++i) {
         if (appliances_[i]->canInteract(playerX, playerY)) {
             return static_cast<int>(i);
         }
     }
-    return -1;
+    return std::nullopt;
 }
 
 Position ProductionManager::getAppliancePosition(int index) const {
@@ -95,9 +102,9 @@ void ProductionManager::configurePartAssembler(int index, int modeIndex) {
         return;
     }
 
-    PartAssembler* assembler = dynamic_cast<PartAssembler*>(appliances_[index].get());
+    if (appliances_[index]->getType() == "PartAssembler") {
+        PartAssembler* assembler = static_cast<PartAssembler*>(appliances_[index].get());
 
-    if (assembler) {
         PartAssemblerMode mode;
         std::string modeName;
 
@@ -125,15 +132,14 @@ void ProductionManager::configurePartAssembler(int index, int modeIndex) {
 }
 
 void ProductionManager::configureFoodDrinksStation(int index, int modeIndex) {
-
     if (index < 0 || index >= static_cast<int>(appliances_.size())) {
         std::cout << "Invalid station index!\n";
         return;
     }
 
-    FoodAndDrinksStation* station = dynamic_cast<FoodAndDrinksStation*>(appliances_[index].get());
+    if (appliances_[index]->getType() == "FoodAndDrinksStation") {
+        FoodAndDrinksStation* station = static_cast<FoodAndDrinksStation*>(appliances_[index].get());
 
-    if (station) {
         FoodDrinksMode mode;
         std::string modeName;
 
@@ -170,18 +176,14 @@ std::string ProductionManager::getProductName(int index) const {
         return "Fuel";
     }
     else if (type == "PartAssembler") {
-        PartAssembler* assembler = dynamic_cast<PartAssembler*>(appliances_[index].get());
-        if (assembler) {
-            return assembler->getModeName();
-        }
-        return "Unknown";
+        // ИСПРАВЛЕНО: Вместо dynamic_cast используем static_cast (тип уже проверен)
+        const PartAssembler* assembler = static_cast<const PartAssembler*>(appliances_[index].get());
+        return assembler->getModeName();
     }
     else if (type == "FoodAndDrinksStation") {
-        FoodAndDrinksStation* station = dynamic_cast<FoodAndDrinksStation*>(appliances_[index].get());
-        if (station) {
-            return station->getModeName();
-        }
-        return "Unknown";
+        // ИСПРАВЛЕНО: Вместо dynamic_cast используем static_cast (тип уже проверен)
+        const FoodAndDrinksStation* station = static_cast<const FoodAndDrinksStation*>(appliances_[index].get());
+        return station->getModeName();
     }
 
     return "Unknown";
@@ -195,17 +197,17 @@ int ProductionManager::getProductPrice(int index) const {
     std::string type = appliances_[index]->getType();
 
     if (type == "FuelMaker") {
-        FuelMaker* maker = dynamic_cast<FuelMaker*>(appliances_[index].get());
-        return maker ? maker->getFuelPrice() : 0;
+        const FuelMaker* maker = static_cast<const FuelMaker*>(appliances_[index].get());
+        return maker->getFuelPrice();
     }
     else if (type == "PartAssembler") {
-        PartAssembler* assembler = dynamic_cast<PartAssembler*>(appliances_[index].get());
-        return assembler ? assembler->getCurrentPrice() : 0;
+        const PartAssembler* assembler = static_cast<const PartAssembler*>(appliances_[index].get());
+        return assembler->getCurrentPrice();
     }
     else if (type == "FoodAndDrinksStation") {
-        FoodAndDrinksStation* station = dynamic_cast<FoodAndDrinksStation*>(appliances_[index].get());
-        return station ? station->getCurrentPrice() : 0;
+        const FoodAndDrinksStation* station = static_cast<const FoodAndDrinksStation*>(appliances_[index].get());
+        return station->getCurrentPrice();
     }
 
     return 0;
-}
+}}
