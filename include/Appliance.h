@@ -30,7 +30,7 @@ public:
     std::string getName() const { return name_; }
 
 protected:
-    Appliance() = default;x
+    Appliance() = default;
 
     int level_ = 1;
     std::string name_;

@@ -210,4 +210,4 @@ int ProductionManager::getProductPrice(int index) const {
     }
 
     return 0;
-}}
+}
