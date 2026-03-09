@@ -2,8 +2,9 @@
 
 #include "../include/InformationPlayer.h"
 #include <iostream>
+#include "../include/NotEnoughMoney.h"
 
-InformationPlayer::InformationPlayer(const std::string namePlayer, const std::string s, int a, float py, float px, int startMoney) : name(namePlayer),sex(s),age(a), WorkshopLevel(1), posX(px), posY(py), wallet(startMoney) {
+InformationPlayer::InformationPlayer(const std::string namePlayer, const std::string s, int a, float py, float px, int startMoney) : name(namePlayer),sex(s),age(a), posX(px), posY(py), wallet(startMoney) {
     inventory.push_back({Resource::Type::Fuel, 5});
     inventory.push_back({Resource::Type::Food,7});
     inventory.push_back({Resource::Type::Drinks, 7});
@@ -25,27 +26,10 @@ std::string InformationPlayer::getSex()const {
     return sex;
 }
 
-int InformationPlayer::getLevel()const{return WorkshopLevel;}
 Wallet& InformationPlayer::getWal() {return wallet;}
 void InformationPlayer::SetPosition(float x, float y) {
     posX = x;
     posY = y;
-}
-
-void InformationPlayer::upgradeWorkShop(int cost) {
-    try {
-        wallet.withdraw(cost);
-        WorkshopLevel++;
-        for (auto& price : sellPrice) {
-            price.second = static_cast<int>(price.second * (1.0 - WorkshopLevel * 0.03));
-        }
-        std::cout<<"Congratulations! Now you have " << WorkshopLevel << " level!\n";
-        std::cout<<"Now you have new prices!\n";
-    }
-    catch (const NotEnoughMoney& error) {
-        std::cout<<"O, no. Error!!! " << error.what() << '\n';
-        throw;
-    }
 }
 
 bool InformationPlayer::addResource(Resource::Type type, int amount) {
@@ -98,8 +82,7 @@ void InformationPlayer::print() const {
     std::cout <<"Player's name: " << name << '\n';
     std::cout <<"Player's sex: " << sex << '\n';
     std::cout <<"Player's coordinates: " << posX << " , " << posY << '\n';
-    std::cout <<"WorkShop's level: " << WorkshopLevel << '\n';
-    std::cout <<"Wallet balance: " << wallet << '\n';
+    std::cout << wallet << '\n';
     std::cout<<"Inventory:\n";
     for (const auto& res : inventory) {
         std::string typeName;
@@ -112,10 +95,9 @@ void InformationPlayer::print() const {
         }
         std::cout << "  - " << typeName << ": " << res.amount << " units\n";
     }
-    std::cout<<"Prices for " << WorkshopLevel << " level:\n";
-    std::cout<<"Fuel purchase: "  << sellPrice.at(Resource::Type::Fuel) << '\n';
-    std::cout<<"Food purchase: " << sellPrice.at(Resource::Type::Food)<<'\n';
-    std::cout<<"Drinks purchase: " << sellPrice.at(Resource::Type::Drinks)<<'\n';
-    std::cout<<"Details purchase: "  << sellPrice.at(Resource::Type::Details)<<'\n';
-    std::cout<<"Decorations purchase: " << sellPrice.at(Resource::Type::Decorations)<<'\n';
+    std::cout<<"Fuel sale price: "  << sellPrice.at(Resource::Type::Fuel) << '\n';
+    std::cout<<"Food sale price: " << sellPrice.at(Resource::Type::Food)<<'\n';
+    std::cout<<"Drinks sale price: " << sellPrice.at(Resource::Type::Drinks)<<'\n';
+    std::cout<<"Details sale price: "  << sellPrice.at(Resource::Type::Details)<<'\n';
+    std::cout<<"Decorations sale price: " << sellPrice.at(Resource::Type::Decorations)<<'\n';
 }

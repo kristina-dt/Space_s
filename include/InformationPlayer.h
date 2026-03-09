@@ -15,11 +15,9 @@ private:
     std::string name;
     std::string sex;
     int age;
-    int WorkshopLevel;
     std::vector<Resource> inventory;
     static constexpr float posX = 2.2, posY=2.2;
     Wallet wallet;
-    std::map<Resource::Type, int> buyPrice;
     std::map<Resource::Type, int> sellPrice;
 public:
     InformationPlayer (const std::string namePlayer, const std::string s, int a, float py, float px, int startMoney);
@@ -27,15 +25,11 @@ public:
     std::string getSex()const;
     constexpr float getX()const{return posX;};
     constexpr float getY()const{return posY;};
-    int getLevel()const;
     Wallet& getWal();
     void SetPosition(float x, float y);
-    void upgradeWorkShop(int cost);
-    bool addResource(Resource::Type type, int amount);
-    bool buyResource(Resource::Type type, int amount);
     bool sell(Resource::Type type, int amount);
+    bool addResource(Resource::Type type, int amount);
     bool sellTakeMoney(Resource::Type type, int amount);
-    int getBuyPrice(Resource::Type type) const;
     int getSellPrice(Resource::Type type) const;
     int getAmountResource(Resource::Type type) const;
     void print() const;
