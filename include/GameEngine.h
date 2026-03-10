@@ -13,8 +13,7 @@ public:
     static constexpr int HEIGHT = 13;
     GameEngine();
     void playerMovements(InformationPlayer& player);
-    void run(const std::vector<std::string>& map, InformationPlayer& player);
-
+    void run(InformationPlayer& player);
 };
 
 
