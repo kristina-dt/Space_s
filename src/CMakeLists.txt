@@ -1,11 +1,11 @@
 add_library(GameLogic
+        Map.cpp
+        NotEnoughMoney.cpp
+        GameEngine.cpp
         Appliance.cpp
         FoodMaker.cpp
         FuelMaker.cpp
-        GameEngine.cpp
         InformationPlayer.cpp
-        Map.cpp
-        NotEnoughMoney.cpp
         Order.cpp
         PartAssembler.cpp
         ProductionManager.cpp
@@ -14,5 +14,4 @@ add_library(GameLogic
         UrgentOrder.cpp
         Wallet.cpp
 )
-
-target_include_directories(GameLogic PUBLIC ../include)
+target_include_directories(GameLogic  PUBLIC ../include)
