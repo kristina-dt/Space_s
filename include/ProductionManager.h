@@ -3,11 +3,12 @@
 #include "Appliance.h"
 #include "FuelMaker.h"
 #include "PartAssembler.h"
-#include "FoodMaker.h"
-#include "Player.h"
+#include "FoodAndDrinksStation.h"
+#include "InformationPlayer.h"
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <optional>
 
 class ProductionManager {
 private:
@@ -18,12 +19,15 @@ public:
     Appliance* getAppliance(int index);
     size_t getCount() const;
     void showAllAppliances() const;
-    void produceAll(Player& player);
-    void produceAt(size_t index, Player& player);
-    void upgradeAppliance(size_t index, Player& player);
+    void produceAll(InformationPlayer& player);
+    void produceAt(size_t index, InformationPlayer& player);
+    void upgradeAppliance(size_t index, InformationPlayer& player);
     void configurePartAssembler(int index, int modeIndex);
     void configureFoodDrinksStation(int index, int modeIndex);
-    std::string getProductName(int index) const;
 
+    std::optional<int> findNearbyAppliance(float playerX, float playerY) const;
+    Position getAppliancePosition(int index) const;
+
+    std::string getProductName(int index) const;
     int getProductPrice(int index) const;
 };

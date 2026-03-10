@@ -1,4 +1,4 @@
-#include "../include/FoodMaker.h"
+#include "../include/FoodAndDrinksStation.h"
 #include <iostream>
 
 FoodAndDrinksStation::FoodAndDrinksStation(int x, int y) {
@@ -27,27 +27,49 @@ std::string FoodAndDrinksStation::getModeName() const {
     }
 }
 
+Resource::Type FoodAndDrinksStation::getResourceType() const {
+    switch(currentMode_) {
+        case FoodDrinksMode::Food: return Resource::Type::Food;
+        case FoodDrinksMode::Drinks: return Resource::Type::Drinks;
+        default: return Resource::Type::Food;
+    }
+}
+
 int FoodAndDrinksStation::getCurrentPrice() const {
     switch(currentMode_) {
         case FoodDrinksMode::Food:
-            return 30 + (level_ - 1) * 12;     // Food: 30, 42, 54...(cost of 1 unit)
+            return 30 + (level_ - 1) * 12;
         case FoodDrinksMode::Drinks:
-            return 20 + (level_ - 1) * 8;      // Drinks: 20, 28, 36...
+            return 20 + (level_ - 1) * 8;
         default:
             return 0;
     }
 }
 
-bool FoodAndDrinksStation::produce(Player& player) {
+bool FoodAndDrinksStation::produce(InformationPlayer& player) {
     int price = getCurrentPrice();
-    std::string productName = getModeName();
+    Resource::Type resourceType = getResourceType();
+    std::string typeName = getModeName();
 
-    player.addResource(productName, 1);
+    // Проверяем, может ли игрок заплатить
+    Wallet& wallet = player.getWal();
+    if (wallet.getAmount() < price) {
+        std::cout << "Not enough money! Need " << price
+                  << ", have " << wallet.getAmount() << "\n";
+        return false;
+    }
 
-    std::cout << name_ << " (Lvl " << level_ << ") produced 1 " << productName << "\n";
+    // Списываем деньги
+    wallet.spend(price);
+
+    // Добавляем ресурс
+    player.addResource(resourceType, 1);
+
+    std::cout << "🍳 " << name_ << " (Lvl " << level_ << ") produced 1 " << typeName << "\n";
     std::cout << "   Price: " << price << " credits\n";
-    std::cout << "   Total " << productName << ": "
-              << player.getResourceAmount(productName) << "\n";
+    std::cout << "   Money left: " << wallet.getAmount() << "\n";
+    std::cout << "   Total " << typeName << ": "
+              << player.getAmountResource(resourceType) << "\n";
 
     return true;
 }

@@ -1,10 +1,16 @@
-#include <optional>
 #include "../include/ProductionManager.h"
+#include <iostream>
+
 
 ProductionManager::ProductionManager() {
-    appliances_.push_back(std::make_unique<FuelMaker>(5, 10));
-    appliances_.push_back(std::make_unique<PartAssembler>(8, 12));
-    appliances_.push_back(std::make_unique<FoodAndDrinksStation>(3, 7));
+    std::unique_ptr<Appliance> maker = std::make_unique<FuelMaker>(5, 10);
+    std::unique_ptr<Appliance> assembler = std::make_unique<PartAssembler>(8, 12);
+    std::unique_ptr<Appliance> food = std::make_unique<FoodAndDrinksStation>(3, 7);
+
+    appliances_.push_back(std::move(maker));
+    appliances_.push_back(std::move(assembler));
+    appliances_.push_back(std::move(food));
+
     std::cout << "\nProduction Manager initialized with "
               << appliances_.size() << " appliances\n";
     std::cout << "   Station 0: Fuel Synthesizer at (5, 10)\n";
@@ -20,16 +26,9 @@ Appliance* ProductionManager::getAppliance(int index) {
     return nullptr;
 }
 
-size_t ProductionManager::getCount() const {
+size_t ProductionManager::getCount() const {  // Реализация метода
     return appliances_.size();
 }
-
-
-
-class ProductionManager {
-public:
-    std::optional<int> findNearbyAppliance(int playerX, int playerY) const;
-};
 
 std::optional<int> ProductionManager::findNearbyAppliance(int playerX, int playerY) const {
     for (size_t i = 0; i < appliances_.size(); ++i) {
@@ -47,6 +46,7 @@ Position ProductionManager::getAppliancePosition(int index) const {
     return Position(-1, -1);
 }
 
+// Остальные методы без изменений...
 void ProductionManager::produceAll(Player& player) {
     std::cout << "\n🔨🔨🔨 PRODUCTION CYCLE 🔨🔨🔨\n";
 
@@ -83,7 +83,6 @@ void ProductionManager::upgradeAppliance(size_t index, Player& player) {
 
     try {
         player.spendMoney(cost);
-
         app->upgrade();
 
         std::cout << " Upgrade successful!\n";
@@ -176,12 +175,10 @@ std::string ProductionManager::getProductName(int index) const {
         return "Fuel";
     }
     else if (type == "PartAssembler") {
-        // ИСПРАВЛЕНО: Вместо dynamic_cast используем static_cast (тип уже проверен)
         const PartAssembler* assembler = static_cast<const PartAssembler*>(appliances_[index].get());
         return assembler->getModeName();
     }
     else if (type == "FoodAndDrinksStation") {
-        // ИСПРАВЛЕНО: Вместо dynamic_cast используем static_cast (тип уже проверен)
         const FoodAndDrinksStation* station = static_cast<const FoodAndDrinksStation*>(appliances_[index].get());
         return station->getModeName();
     }
@@ -210,4 +207,13 @@ int ProductionManager::getProductPrice(int index) const {
     }
 
     return 0;
+}
+
+void ProductionManager::showAllAppliances() const {  // Добавлена реализация
+    std::cout << "\n=== APPLIANCES ===\n";
+    for (size_t i = 0; i < appliances_.size(); ++i) {
+        std::cout << i << ": " << appliances_[i]->getType()
+                  << " (Level " << appliances_[i]->getLevel() << ")\n";
+    }
+    std::cout << "==================\n";
 }

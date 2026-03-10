@@ -9,7 +9,7 @@ public:
     FuelMaker(int x, int y);
 
     std::string getType() const override;
-    bool produce(Player& player) override;
+    bool produce(InformationPlayer& player) override;
     int getUpgradeCost() const override;
 
     int getFuelPrice() const;
