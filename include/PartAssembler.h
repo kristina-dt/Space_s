@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Appliance.h"
-#include "Player.h"
+#include "InformationPlayer.h"
 
 enum class PartAssemblerMode {
     Details,
