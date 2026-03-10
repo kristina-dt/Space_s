@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 project(MyProject)
-
 set(CMAKE_CXX_STANDARD 23)
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(googletest)
 
 include(cmake/config.cmake)
 
@@ -10,7 +15,6 @@ include_directories(include)
 
 add_executable(SpaceGame main.cpp)
 target_link_libraries(SpaceGame PRIVATE GameLogic)
-
 
 enable_testing()
 
