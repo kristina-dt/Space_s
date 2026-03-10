@@ -1,8 +1,8 @@
 
 #pragma once
 
-#include "Order.h""
-class UrgentOrder {
+#include "Order.h"
+class UrgentOrder final : public Order {
 private:
     Resource::Type resource_;
     int amount_;
