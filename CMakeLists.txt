@@ -15,7 +15,7 @@ add_subdirectory(src)
 include_directories(include)
 
 add_executable(SpaceGame main.cpp
-        Map.cpp
+        src/Map.cpp
         src/NotEnoughMoney.cpp
         src/GameEngine.cpp
         src/Appliance.cpp
@@ -44,4 +44,3 @@ target_link_libraries(
 )
 include(GoogleTest)
 gtest_discover_tests(test_ex)
-
