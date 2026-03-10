@@ -18,8 +18,11 @@ InformationPlayer createPlayer(){
     return InformationPlayer(name, sex, age, startY, startX, startMoney);
 }
 int main() {
-    GameEngine m;
-    m.drawOnce();
+    InformationPlayer player("CosmoWorker", "Male", 25, 2.0, 2.0, 1000);
+    GameEngine engine;
+
+    engine.run(player);
+
 
 
     return 0;

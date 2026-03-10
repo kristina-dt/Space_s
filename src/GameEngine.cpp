@@ -18,7 +18,7 @@ GameEngine::GameEngine(): player(2,2){
         };
 }
 
-void GameEngine::playerMovements(InformationPlayer &player) {
+void GameEngine::playerMovements(InformationPlayer& player) {
     int button = getch();
     int nextX = player.getx();
     int nextY = player.gety();
@@ -38,7 +38,7 @@ void GameEngine::playerMovements(InformationPlayer &player) {
     }
 }
 
-void GameEngine::run(const std::vector<std::string> &map, InformationPlayer &player) {
+void GameEngine::run(InformationPlayer &player) {
     initscr();
     cbreak();
     noecho();

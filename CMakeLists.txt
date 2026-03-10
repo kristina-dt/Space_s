@@ -8,13 +8,14 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+find_package(Curses REQUIRED)
 include(cmake/config.cmake)
 
 add_subdirectory(src)
 include_directories(include)
 
 add_executable(SpaceGame main.cpp)
-target_link_libraries(SpaceGame PRIVATE GameLogic)
+target_link_libraries(SpaceGame PRIVATE GameLogic ${CURSES_LIBRARIES})
 
 enable_testing()
 
