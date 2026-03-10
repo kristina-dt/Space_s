@@ -1,4 +1,4 @@
-#include "FuelMaker.h"
+#include "../include/FuelMaker.h"
 #include <iostream>
 
 FuelMaker::FuelMaker(int x, int y) {
