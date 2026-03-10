@@ -21,6 +21,12 @@ struct Position {
 };
 
 class Appliance {
+protected:
+    Appliance() = default;
+
+    int level_ = 1;
+    std::string name_;
+    Position position_;
 public:
     virtual ~Appliance() = default;
 
@@ -38,10 +44,4 @@ public:
         return position_.isNearby(playerX, playerY, distance);
     }
 
-protected:
-    Appliance() = default;
-
-    int level_ = 1;
-    std::string name_;
-    Position position_;
 };

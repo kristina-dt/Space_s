@@ -26,7 +26,7 @@ Appliance* ProductionManager::getAppliance(int index) {
     return nullptr;
 }
 
-size_t ProductionManager::getCount() const {  // Реализация метода
+size_t ProductionManager::getCount() const {
     return appliances_.size();
 }
 
@@ -209,7 +209,7 @@ int ProductionManager::getProductPrice(int index) const {
     return 0;
 }
 
-void ProductionManager::showAllAppliances() const {  // Добавлена реализация
+void ProductionManager::showAllAppliances() const {
     std::cout << "\n=== APPLIANCES ===\n";
     for (size_t i = 0; i < appliances_.size(); ++i) {
         std::cout << i << ": " << appliances_[i]->getType()
