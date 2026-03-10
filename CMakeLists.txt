@@ -26,7 +26,6 @@ target_link_libraries(
         test_ex
         GTest::gtest_main
 )
-
 include(GoogleTest)
 gtest_discover_tests(test_ex)
 
