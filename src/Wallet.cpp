@@ -7,9 +7,6 @@ Wallet::Wallet(int initialAmount) noexcept : balance(initialAmount) {
         balance = 0;
     }
 }
-Wallet::Wallet(Wallet &&other) noexcept : balance(other.balance) {
-    other.balance = 0;
-}
 void Wallet::withdraw(int amount) {
     if (amount > balance) {
         throw NotEnoughMoney( "Not enough money. Need:" + std::to_string(amount) +
@@ -26,6 +23,7 @@ int Wallet::getBal() const {
 std::ostream& operator<<(std::ostream& os, const Wallet& wal) {
     os << "Wallet Balance: " << wal.getBal() << " credits";
     return os;
+
 }
 
 

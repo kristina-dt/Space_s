@@ -1,4 +1,4 @@
-#include "PartAssembler.h"
+#include "../include/PartAssembler.h"
 #include <iostream>
 
 PartAssembler::PartAssembler(int x, int y) {

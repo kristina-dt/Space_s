@@ -1,4 +1,4 @@
-#include "FuelMaker.h"
+#include "../include/FuelMaker.h"
 #include <iostream>
 
 FuelMaker::FuelMaker(int x, int y) {
@@ -28,5 +28,5 @@ bool FuelMaker::produce(Player& player) {
 }
 
 int FuelMaker::getUpgradeCost() const {
-    return 150 * level_; .
+    return 150 * level_;
 }

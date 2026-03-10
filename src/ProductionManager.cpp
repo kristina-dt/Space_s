@@ -1,5 +1,5 @@
 #include <optional>
-#include "ProductionManager.h"
+#include "../include/ProductionManager.h"
 
 ProductionManager::ProductionManager() {
     appliances_.push_back(std::make_unique<FuelMaker>(5, 10));
@@ -210,4 +210,4 @@ int ProductionManager::getProductPrice(int index) const {
     }
 
     return 0;
-}}
+}
