@@ -3,7 +3,7 @@
 #include "Map.h"
 #include <string>
 #include <vector>
-#include <ncurses.h>
+//#include <ncurses.h>
 class GameEngine {
     bool keepRunning;
     std::vector<std::string> map;

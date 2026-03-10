@@ -4,7 +4,7 @@
 #include <iostream>
 #include "../include/NotEnoughMoney.h"
 
-InformationPlayer::InformationPlayer(const std::string namePlayer, const std::string s, int a, int startMoney) : name(namePlayer),sex(s),age(a), posX(startX), posY(startX), wallet(startMoney) {
+InformationPlayer::InformationPlayer(const std::string namePlayer, const std::string s, int a,float px, float py, int startMoney) : name(namePlayer),sex(s),age(a), posX(px), posY(py), wallet(startMoney) {
     inventory.push_back({Resource::Type::Fuel, 5});
     inventory.push_back({Resource::Type::Food,7});
     inventory.push_back({Resource::Type::Drinks, 7});
